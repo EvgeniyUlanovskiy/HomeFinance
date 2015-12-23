@@ -23,8 +23,10 @@
                         <ComboBox fx:id="yearComBox" layoutX="219.0" layoutY="125.0" prefHeight="25.0" prefWidth="80.0" promptText="Год" AnchorPane.rightAnchor="20.0" />
                         <ComboBox fx:id="categorySelectComBox" editable="true" layoutX="101.0" layoutY="171.0" prefWidth="149.0" promptText="Выберите категорию" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" />
                         <TextField fx:id="categoryComment" layoutX="101.0" layoutY="206.0" prefWidth="149.0" promptText="Введите примечание" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" />
-                        <Button fx:id="depositButton" layoutX="86.0" layoutY="246.0" mnemonicParsing="false" prefWidth="80.0" text="Прибавить" AnchorPane.leftAnchor="56.0" />
-                        <Button fx:id="withdrawButton" layoutX="198.0" layoutY="246.0" mnemonicParsing="false" prefWidth="80.0" text="Вычесть" AnchorPane.rightAnchor="56.0" />
+                        <Button fx:id="depositButton" onAction="#deposite" layoutX="86.0" layoutY="246.0"
+                                mnemonicParsing="false" prefWidth="80.0" text="Прибавить" AnchorPane.leftAnchor="56.0"/>
+                        <Button fx:id="withdrawButton" onAction="#withdraw" layoutX="198.0" layoutY="246.0"
+                                mnemonicParsing="false" prefWidth="80.0" text="Вычесть" AnchorPane.rightAnchor="56.0"/>
                         <Separator layoutX="2.0" layoutY="49.0" prefHeight="3.0" prefWidth="345.0" />
                     </children></AnchorPane>
             </content>
