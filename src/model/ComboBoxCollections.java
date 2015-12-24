@@ -40,20 +40,22 @@ public class ComboBoxCollections {
     );
 
     public static ObservableList<String> setMonthComBox = FXCollections.observableArrayList(
-            "январь",
-            "февраль",
-            "март",
-            "апрель",
-            "май",
-            "июнь",
-            "июль",
-            "сентябрь",
-            "октябрь",
-            "ноябрь",
-            "декабрь"
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"
     );
 
     public static ObservableList<String> setYearComBox = FXCollections.observableArrayList(
+            "2015",
             "2016",
             "2017",
             "2018",
