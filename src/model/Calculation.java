@@ -14,6 +14,7 @@ public class Calculation {
 
     public static void withdrawToAccount(String inputNumber) {
         String currentBalanceValue = Account.getBalance();
+
         try {
             int i = Integer.parseInt(inputNumber);
             int newBalance = Integer.parseInt(currentBalanceValue) - i;
