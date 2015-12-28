@@ -35,14 +35,14 @@ GregorianCalendar calendar = new GregorianCalendar();
         Calculation.depositeToAccount(inputField.getText());
         currentBalanceValue.setText(Account.getBalance());
         History.setHistory(dayComBox.getValue()+"."+monthComBox.getValue()+"."+yearComBox.getValue()+" "+inputField.getText()+" "+categorySelectComBox.getValue()+" "+categoryComment.getText());
-
+        historyArea.setText(History.getHistory());
     }
 
     @FXML private void withdraw(ActionEvent event) {
         Calculation.withdrawToAccount(inputField.getText());
         currentBalanceValue.setText(Account.getBalance());
         History.setHistory(dayComBox.getValue()+"."+monthComBox.getValue()+"."+yearComBox.getValue()+" "+inputField.getText()+" "+categorySelectComBox.getValue()+" "+categoryComment.getText());
-
+        historyArea.setText(History.getHistory());
     }
     public void initialize(URL location, ResourceBundle resources) {
         dayComBox.setItems(ComboBoxCollections.setDayComboBox);
