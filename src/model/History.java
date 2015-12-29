@@ -2,9 +2,8 @@ package model;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.*;
+
 public class History {
-    GregorianCalendar calendar = new GregorianCalendar();
 
     public static void setHistory(String totalHistory) {
         try {
@@ -28,4 +27,13 @@ public class History {
         return getHistoryView;
     }
 
-}
+    public static String commentFormatter(String comment){
+        if (comment==null) {
+           comment="";
+            return comment;
+        } else {
+        return comment;
+        }}
+
+    }
+

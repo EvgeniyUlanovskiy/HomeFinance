@@ -1,6 +1,5 @@
 package model;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 
 public class Account {
@@ -8,9 +7,8 @@ public class Account {
     public static String getBalance() {
         String currentBalance = null;
         try {
-            currentBalance = FileWorker.read("balance.res");
+            currentBalance = FileWorker.readBalance("balance.res");
         } catch (FileNotFoundException e) {
-            File file = new File("balance.res");
             try {
                 FileWorker.write("balance.res", "0");
                 currentBalance = "0";

@@ -34,14 +34,14 @@ GregorianCalendar calendar = new GregorianCalendar();
     @FXML private void deposite(ActionEvent event) {
         Calculation.depositeToAccount(inputField.getText());
         currentBalanceValue.setText(Account.getBalance());
-        History.setHistory(dayComBox.getValue()+"."+monthComBox.getValue()+"."+yearComBox.getValue()+" "+inputField.getText()+" "+categorySelectComBox.getValue()+" "+categoryComment.getText());
+        History.setHistory(dayComBox.getValue()+"."+monthComBox.getValue()+"."+yearComBox.getValue()+" + "+inputField.getText()+" "+categorySelectComBox.getValue()+" "+History.commentFormatter(categoryComment.getText()));
         historyArea.setText(History.getHistory());
     }
 
     @FXML private void withdraw(ActionEvent event) {
         Calculation.withdrawToAccount(inputField.getText());
         currentBalanceValue.setText(Account.getBalance());
-        History.setHistory(dayComBox.getValue()+"."+monthComBox.getValue()+"."+yearComBox.getValue()+" "+inputField.getText()+" "+categorySelectComBox.getValue()+" "+categoryComment.getText());
+        History.setHistory(dayComBox.getValue()+"."+monthComBox.getValue()+"."+yearComBox.getValue()+" - "+inputField.getText()+" "+categorySelectComBox.getValue()+" "+History.commentFormatter(categoryComment.getText()));
         historyArea.setText(History.getHistory());
     }
     public void initialize(URL location, ResourceBundle resources) {
@@ -52,6 +52,7 @@ GregorianCalendar calendar = new GregorianCalendar();
         yearComBox.setItems(ComboBoxCollections.setYearComBox);
         yearComBox.setValue(String.valueOf(calendar.get(Calendar.YEAR)));
         categorySelectComBox.setItems(ComboBoxCollections.setCategorySelectComBox);
+        categorySelectComBox.setValue("Прочее");
         currentBalanceValue.setText(Account.getBalance());
         historyArea.setText(History.getHistory());
     }

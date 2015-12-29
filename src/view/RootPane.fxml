@@ -1,32 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?package view;?>
-
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<TabPane fx:controller="controller.Controller" prefHeight="316.0" prefWidth="301.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+
+<TabPane prefHeight="463.0" prefWidth="447.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.66" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
     <tabs>
         <Tab text="Ввод данных">
             <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="314.0">
                     <children>
-                        <TextField fx:id="inputField" alignment="CENTER" layoutX="76.0" layoutY="60.0" prefHeight="21.0" prefWidth="149.0" promptText="Введите сумму" AnchorPane.leftAnchor="76.0" AnchorPane.rightAnchor="76.0" AnchorPane.topAnchor="60.0">
+                        <TextField fx:id="inputField" alignment="CENTER" layoutX="76.0" layoutY="63.0" prefHeight="31.0" prefWidth="295.0" promptText="Введите сумму" AnchorPane.bottomAnchor="340.0" AnchorPane.leftAnchor="76.0" AnchorPane.rightAnchor="76.0" AnchorPane.topAnchor="63.0">
                      <padding>
                         <Insets left="3.0" right="3.0" />
                      </padding></TextField>
-                        <Label alignment="CENTER" layoutX="18.0" layoutY="19.0" text="Ваш текущий баланс:" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
-                        <Label fx:id="currentBalanceValue" layoutX="200.0" layoutY="19.0" />
-                        <Label layoutX="110.0" layoutY="94.0" text="Выберите дату" AnchorPane.leftAnchor="114.0" AnchorPane.rightAnchor="106.0" />
-                        <ComboBox fx:id="dayComBox" layoutX="46.0" layoutY="125.0" prefHeight="25.0" prefWidth="80.0" promptText="День" AnchorPane.leftAnchor="20.0" />
-                        <ComboBox fx:id="monthComBox" layoutX="131.0" layoutY="125.0" prefHeight="25.0" prefWidth="80.0" promptText="Месяц" AnchorPane.leftAnchor="110.0" AnchorPane.rightAnchor="110.0" />
-                        <ComboBox fx:id="yearComBox" layoutX="219.0" layoutY="125.0" prefHeight="25.0" prefWidth="80.0" promptText="Год" AnchorPane.rightAnchor="20.0" />
-                        <ComboBox fx:id="categorySelectComBox" editable="true" layoutX="101.0" layoutY="171.0" prefWidth="149.0" promptText="Выберите категорию" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" />
-                        <TextField fx:id="categoryComment" layoutX="101.0" layoutY="206.0" prefWidth="149.0" promptText="Введите примечание" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" />
-                        <Button onAction="#deposite" layoutX="86.0" layoutY="246.0"
-                                mnemonicParsing="false" prefWidth="80.0" text="Прибавить" AnchorPane.leftAnchor="56.0"/>
-                        <Button onAction="#withdraw" layoutX="198.0" layoutY="246.0"
-                                mnemonicParsing="false" prefWidth="80.0" text="Вычесть" AnchorPane.rightAnchor="56.0"/>
+                        <Label alignment="CENTER" layoutX="18.0" layoutY="19.0" text="Ваш текущий баланс:" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label fx:id="currentBalanceValue" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="10.0" prefHeight="31.0" prefWidth="186.0" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold Italic" size="22.0" />
+                     </font></Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="110.0" layoutY="94.0" prefHeight="17.0" prefWidth="87.0" text="Выберите дату" textAlignment="CENTER" AnchorPane.bottomAnchor="315.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <ComboBox fx:id="dayComBox" layoutX="46.0" layoutY="125.0" prefHeight="40.0" prefWidth="80.0" promptText="День" AnchorPane.bottomAnchor="260.0" AnchorPane.leftAnchor="20.0" />
+                        <ComboBox fx:id="monthComBox" layoutX="131.0" layoutY="125.0" prefHeight="40.0" prefWidth="80.0" promptText="Месяц" AnchorPane.bottomAnchor="260.0" AnchorPane.leftAnchor="110.0" AnchorPane.rightAnchor="110.0" />
+                        <ComboBox fx:id="yearComBox" layoutX="219.0" layoutY="125.0" prefHeight="40.0" prefWidth="80.0" promptText="Год" AnchorPane.bottomAnchor="260.0" AnchorPane.rightAnchor="20.0" />
+                        <ComboBox fx:id="categorySelectComBox" editable="true" layoutX="101.0" layoutY="171.0" prefHeight="50.0" prefWidth="250.0" promptText="Выберите категорию" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" />
+                        <TextField fx:id="categoryComment" layoutX="101.0" layoutY="206.0" prefHeight="50.0" prefWidth="250.0" promptText="Введите примечание" AnchorPane.bottomAnchor="110.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" />
+                        <Button layoutX="46.0" layoutY="348.0" mnemonicParsing="false" onAction="#deposite" prefHeight="60.0" prefWidth="150.0" text="Прибавить" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="46.0" />
+                        <Button layoutX="290.0" layoutY="341.0" mnemonicParsing="false" onAction="#withdraw" prefHeight="60.0" prefWidth="150.0" text="Вычесть" AnchorPane.bottomAnchor="26.0" AnchorPane.rightAnchor="46.0" />
                         <Separator layoutX="2.0" layoutY="49.0" prefHeight="3.0" prefWidth="345.0" />
                     </children></AnchorPane>
             </content>
@@ -35,9 +46,9 @@
             <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                     <children>
-                        <ScrollPane prefHeight="368.0" prefWidth="345.0">
+                        <ScrollPane prefHeight="434.0" prefWidth="447.0">
                             <content>
-                                <TextArea fx:id="historyArea" prefHeight="366.0" prefWidth="343.0" />
+                                <TextArea fx:id="historyArea" prefHeight="434.0" prefWidth="447.0" />
                             </content>
                         </ScrollPane>
                     </children></AnchorPane>

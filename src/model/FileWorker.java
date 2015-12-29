@@ -60,44 +60,21 @@ public class FileWorker {
         //Определяем файл и проверяем существует ли он
         File file = new File(fileName);
         exists(fileName);
-        try {
             //Добавляем экземпляр класса для чтения файла в буфер(для считывания кол-ва строк в файле)
-            BufferedReader fileLenght = new BufferedReader(new FileReader(file.getAbsoluteFile()));
+            BufferedReader in = new BufferedReader(new FileReader(file.getAbsoluteFile()));
             String s;       //***Добовляем необходимые переменные***\\
-            int count = 0;  //**************************************\\
+            //**************************************\\
             try {
-                //В цикле построчно считываем файл для определения кол-ва строк
-                while ((s = fileLenght.readLine()) != null) {
-                    count++;
+                while ((s = in.readLine()) != null) {
+                    sb.append(s);
+                    sb.append("\n");
                 }
-
-                //Закрываем поток
-                fileLenght.close();
-
-                //Открываем новый поток для чтения файла в буфер(для считывания самого файла)
-                BufferedReader in = new BufferedReader(new FileReader(file.getAbsoluteFile()));
-
-                //Если кол-во строк в файле больше одной, то при считывании добовляем символ перевода строки
-                if (count > 1) {
-                    while ((s = in.readLine()) != null) {
-                        sb.append(s);
-                        sb.append("\n");
-                    }
-                } else {
-                    s = in.readLine();
-                    return s;
-                }
-            } finally {
-                //Также не забываем закрыть файл
-                fileLenght.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
         //Возвращаем полученный текст с файла
         return sb.toString();
     }
-
     /********************************************************************************************************************************
      * ******************************************** Метод для обновления данных в файле **********************************************
      ********************************************************************************************************************************/
@@ -115,4 +92,25 @@ public class FileWorker {
         //Записываем данные в файл
         write(fileName, sb.toString());
     }
-}
+    public static String readBalance (String fileName) throws FileNotFoundException {
+        //Добавляем экземпляр класса для создание строк
+        StringBuilder sb = new StringBuilder();
+
+        //Определяем файл и проверяем существует ли он
+        File file = new File(fileName);
+        exists(fileName);
+        //Добавляем экземпляр класса для чтения файла в буфер(для считывания кол-ва строк в файле)
+        BufferedReader in = new BufferedReader(new FileReader(file.getAbsoluteFile()));
+        String s;       //***Добовляем необходимые переменные***\\
+        //**************************************\\
+        try {
+            while ((s = in.readLine()) != null) {
+                sb.append(s);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        //Возвращаем полученный текст с файла
+        return sb.toString();
+
+}}
