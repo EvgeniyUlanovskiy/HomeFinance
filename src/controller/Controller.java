@@ -18,8 +18,6 @@ import java.util.GregorianCalendar;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
-GregorianCalendar calendar = new GregorianCalendar();
-
 @FXML public ComboBox<String> dayComBox;
 @FXML public ComboBox<String> monthComBox;
 @FXML public ComboBox<String> yearComBox;
@@ -28,8 +26,7 @@ GregorianCalendar calendar = new GregorianCalendar();
 @FXML public TextField inputField;
 @FXML public TextField categoryComment;
 @FXML public TextArea historyArea;
-
-
+    GregorianCalendar calendar = new GregorianCalendar();
 
     @FXML private void deposite(ActionEvent event) {
         Calculation.depositeToAccount(inputField.getText());
@@ -48,7 +45,7 @@ GregorianCalendar calendar = new GregorianCalendar();
         dayComBox.setItems(ComboBoxCollections.setDayComboBox);
         dayComBox.setValue(String.valueOf(calendar.get(Calendar.DAY_OF_MONTH)));
         monthComBox.setItems(ComboBoxCollections.setMonthComBox);
-        monthComBox.setValue(String.valueOf(calendar.get(Calendar.MONTH)+1));
+        monthComBox.setValue(ComboBoxCollections.setMonthComBox.get(calendar.get(Calendar.MONTH)));
         yearComBox.setItems(ComboBoxCollections.setYearComBox);
         yearComBox.setValue(String.valueOf(calendar.get(Calendar.YEAR)));
         categorySelectComBox.setItems(ComboBoxCollections.setCategorySelectComBox);
