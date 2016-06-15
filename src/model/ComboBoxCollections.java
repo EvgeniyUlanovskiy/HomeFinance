@@ -67,7 +67,8 @@ public class ComboBoxCollections {
             "2025",
             "2026"
     );
-
+    // TODO: 15.06.2016 Добавить возможность добавление/сохранение/редактирование списка категорий
+/*
     public static ObservableList<String> setCategorySelectComBox = FXCollections.observableArrayList(
             "Продукты",
             "Питание/проезд",
@@ -76,5 +77,5 @@ public class ComboBoxCollections {
             "Зарплата",
             "Прочее"
     );
-
+*/
 }
